@@ -1,0 +1,3815 @@
+Angular js 
+
+ Program1.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script>
+
+var app = angular.module("myApp", []); app.controller('userCtrl', ['$scope', function ($scope) {
+
+$scope.showGames = function () {
+
+$scope.games = [
+
+{ GameName: 'Cricket', PlayerName: 'sachin', GameType: 'outdoor' },
+
+{ GameName: 'Chess', PlayerName: 'V.Anand', GameType: 'Indoor' },
+
+{ GameName: 'Tennis', PlayerName: 'Pet Sampras', GameType: 'outdoor' }];
+
+}
+
+}]);
+
+
+
+</script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<form>
+
+<div ng-app="myApp" ng-init="Text='Displaying Games array Elements!'">
+
+
+
+<p ng-bind="Text"></p>
+
+</div>
+
+<div ng-controller="userCtrl">
+
+<div ng-repeat='game in games'>
+
+{{game.GameName}}
+
+{{game.PlayerName}}
+
+{{game.GameType}}
+
+</div>
+
+</div>
+
+<input type="button" ng-click="showGames()" value="Click Here"> </button>
+
+</form>
+
+
+
+</body>
+
+</html>
+
+
+
+Program2.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script>
+
+var app = angular.module("myApp", []); app.controller('userCtrl', ['$scope', function ($scope) {
+
+$scope.showCourses = function () {
+
+$scope.ugcourse = [
+
+ 
+
+{ id: 'i', courseName: 'BBA(CA)' },
+
+{ id: 'ii', courseName: 'BCA(Science' },
+
+{ id: 'iii', courseName: 'B.Sc(Computer Science' },
+
+];
+
+$scope.pgcourses = [
+
+{ id: 'i', courseName: 'M.Sc(Computer Science' },
+
+{ id: 'ii', courseName: 'M.Sc.(CA)' },
+
+{ id: 'iii', courseName: 'MCA' },
+
+
+
+];
+
+}
+
+}]);
+
+
+
+</script>
+
+</head>
+
+
+
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<form>
+
+<div ng-controller="userCtrl"> UnderGraduate Courses<br>
+
+<div ng-repeat='x in ugcourse'>
+
+{{x.id}}
+
+{{x.courseName}}
+
+</div>
+
+Post Graduate Courses
+
+<div ng-repeat='x in pgcourses'>
+
+{{x.id}}
+
+{{x.courseName}}
+
+</div>
+
+</div>
+
+<input type="button" ng-click="showCourses()" value="Click Here"> </button>
+
+</form>
+
+
+
+</body>
+
+
+
+</html>
+
+ 
+
+
+
+program3.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+
+</script>
+
+
+
+<body ng-app="myApp" ng-controller="StudController">
+
+<h1>Displaying Students Details </h1>
+
+<table border=2>
+
+<thead>
+
+<tr>
+
+<th>S.No</th>
+
+<th>Name</th>
+
+<th>Class</th>
+
+<th>City</th>
+
+
+
+</tr>
+
+</thead>
+
+<tr ng-repeat="x in StudDetails">
+
+<td> {{x.rollno}} </td>
+
+<td> {{x.name}} </td>
+
+<td> {{x.class}} </td>
+
+<td> {{x.city}} </td>
+
+</tr>
+
+</table>
+
+
+
+</body>
+
+<script>
+
+var app = angular.module('myApp', []); app.controller(
+
+'StudController', function ($scope) {
+
+
+
+$scope.StudDetails = [{ rollno: 1,
+
+name: 'suresh sinde', class: 'fybba ca', city: 'pune',
+
+
+
+}, {
+
+rollno: 2,
+
+name: 'ramesh more', class: 'fybba ca', city: 'mumbai',
+
+
+
+}, {
+
+rollno: 3,
+
+name: 'rajesh jadhav', class: 'sybba ca',
+
+ 
+
+city: 'nashik',
+
+
+
+}, {
+
+rollno: 4,
+
+name: 'amol dubey', class: 'sybba ca', city: 'nagpur',
+
+
+
+}, {
+
+rollno: 5,
+
+name: 'sanjeev mishra', class: 'tybba ca',
+
+city: 'kanpur',
+
+
+
+},
+
+{
+
+rollno: 6,
+
+name: 'rajeev mishra', class: 'sybba ca',
+
+city: 'lucknow',
+
+
+
+},
+
+{
+
+rollno: 7,
+
+name: 'aniket bhosale', class: 'fybba ca',
+
+city: 'ahmednagar',
+
+
+
+},
+
+{
+
+rollno: 8,
+
+name: 'aniket chavan', class: 'fybba ca',
+
+city: 'ahmednagar',
+
+
+
+},
+
+{
+
+rollno: 9,
+
+name: 'abhay deshmukh', class: 'fybba ca',
+
+city: 'pune',
+
+
+
+},
+
+{
+
+rollno: 10,
+
+name: 'ajay deshmukh', class: 'tybba ca',
+
+city: 'pune',
+
+
+
+}
+
+ 
+
+];
+
+
+
+});
+
+</script>
+
+
+
+</html>
+
+
+
+program4.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+
+</script>
+
+
+
+<body ng-app="myApp" ng-controller="myController">
+
+<h1>Displaying Bank Details </h1>
+
+<table border=2>
+
+<thead>
+
+<tr>
+
+<th>Bank Name</th>
+
+<th>MICR Code</th>
+
+<th>IFSC Code</th>
+
+<th>Address</th>
+
+
+
+</tr>
+
+</thead>
+
+<tr ng-repeat="bank in BankDetails">
+
+<td> {{bank.bankname}} </td>
+
+<td> {{bank.micr}} </td>
+
+<td> {{bank.ifsc}} </td>
+
+<td> {{bank.address}} </td>
+
+</tr>
+
+</table>
+
+
+
+</body>
+
+<script>
+
+var app = angular.module('myApp', []); app.controller(
+
+'myController', function ($scope) {
+
+
+
+$scope.BankDetails = [{ bankname: 'SBI',
+
+micr: '123456789', ifsc: 'SBIN001122',
+
+address: 'pune',
+
+
+
+}, {
+
+bankname: 'HDFC Bank', micr: '1122334455',
+
+ifsc: 'HDFC001122',
+
+address: 'mumbai',
+
+ 
+
+}
+
+];
+
+
+
+});
+
+</script>
+
+
+
+</html>
+
+
+
+
+
+program5.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js">
+
+</script>
+
+
+
+<body ng-app="myApp" ng-controller="myController">
+
+<h4>using ng-model directive</h4>
+
+<div ng-app="myApp" ng-controller="myController" ng-init="number1=20; number2=30"> Number 1: <input type="number" ng-model="number1">
+
+Number 2: <input type="number" ng-model="number2"> Result: {{ number1 + number2 }}
+
+</div>
+
+
+
+<br><br>
+
+<h4>using ng-bind directive</h4>
+
+<div ng-app="myApp" ng-controller="myController">
+
+Number 1: <input type="number" ng-model="number3" ng-change="add()"/> Number 2: <input type="number" ng-model="number4" ng-change="add()"/>
+
+<b>Addition=:</b> <span ng-bind="result1"></span>
+
+</div>
+
+<br><br>
+
+<div ng-app="myApp" ng-init="myButton=true">
+
+<button ng-disabled="myButton">Click Me!</button>
+
+<br /><br />
+
+<input type="checkbox" ng-model="myButton"/>Button
+
+<br /><br />
+
+Disabled : {{ myButton }}
+
+</div>
+
+<div ng-app="myApp" ng-controller="myController">
+
+<input type="button" value="Show Angular" ng-click="ShowHide()"/>
+
+<br><br><div ng-show = "IsVisible">Angular</div>
+
+</div>
+
+</body>
+
+<script>
+
+var app = angular.module('myApp', []); app.controller(
+
+'myController', function ($scope) {
+
+$scope.number3 = 1;
+
+$scope.number4 = 1;
+
+$scope.add = function () {
+
+ 
+
+$scope.result1 = ($scope.number3 + $scope.number4);
+
+}
+
+$scope.IsVisible = false;
+
+
+
+$scope.ShowHide = function(){
+
+$scope.IsVisible = true;
+
+}
+
+});
+
+</script>
+
+
+
+</html>
+
+
+
+program6.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
+
+<body ng-app="myApp">
+
+<p>SYBBA CA SYLLABUS CBCS 2019 PATTERN"</p>
+
+
+
+<p><a href="#/!home!">Main Page</a></p>
+
+<ul>
+
+<li><a href="#!dm">CA 301 Digital Marketing</a><br></li>
+
+<li><a href="#!ds">CA 302 Data Structure</a><br></li>
+
+<li><a href="#!se">CA 303 Software Engineering</a><br></li>
+
+<li><a href="#!angular">CA 304 Angular JS </a><br></li>
+
+<li><a href="#!php">CA 304 PHP</a><br></li>
+
+<li><a href="#!bigdata">CA 305 bigdata</a><br></li>
+
+<li><a href="#!blockchain">CA 305 blockchain</a><br></li>
+
+</ul>
+
+<div ng-view></div>
+
+
+
+<script>
+
+var app = angular.module("myApp", ["ngRoute"]); app.config(function($routeProvider) {
+
+$routeProvider
+
+.when("/", {
+
+templateUrl : "home.html"
+
+})
+
+.when("/dm", {
+
+templateUrl : "digitalmarketing.html"
+
+})
+
+.when("/ds", {
+
+templateUrl : "datastructure.html"
+
+})
+
+.when("/se", {
+
+templateUrl : "softwareengg.html"
+
+})
+
+.when("/angular", {
+
+ 
+
+templateUrl : "angular.html"
+
+})
+
+.when("/php", { templateUrl : "php.html"
+
+})
+
+.when("/bigdata", { templateUrl : "bigdata.html"
+
+})
+
+.when("/blockchain", { templateUrl : "blockchain.html"
+
+})
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+digitalmarketing.html
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p> Unit1
+
+E-Commerce<br>
+
+1.1	Introduction
+
+1.2	Understanding Internet Marketing
+
+1.3	Search Engine Optimization
+
+1.4	Search Engine Marketing
+
+1.5	Email Marketing
+
+1.6	Digital Display Marketing
+
+2.	Introduction to New Age Media (Digital) Marketing<br>
+
+2.1	What is Digital Marketing
+
+2.2	Digital vs. Real Marketing
+
+2.3	Digital Marketing Channels
+
+2.4	Types of Digital Marketing(Overview)-Internet Marketing
+
+,Social Media Marketing, Mobile Marketing
+
+3.	Creating Initial Digital Marketing Plan<br>
+
+3.1	Content management
+
+3.2	SWOT analysis: Strengths, Weaknesses, Opportunities, and Threats
+
+3.3	Target group analysis EXERCISE: Define a target group
+
+4.	Marketing using Web Sites<br>
+
+4.1	Web design
+
+4.2	Optimization of Web sites
+
+4.3	MS Expression Web
+
+EXERCISE: Creating web sites, MS Expression
+
+5.	Search Engine Optimization<br>
+
+5.1	SEO Optimization
+
+ 
+
+5.2	Writing the SEO content EXERCISE: Writing the SEO content
+
+6.	Customer Relationship Management<br>
+
+6.1	Introduction to CRM
+
+6.2	CRM platform
+
+6.3	CRM models
+
+7.	Social Media Marketing<br>
+
+7.1	Understanding Social Media Marketing
+
+7.2	Social Networking (Facebook, Linkedin, Twitter, etc.) Social Media (Blogging, Video Sharing - Youtube, Photosharing – Instagram, Podcasts)
+
+7.3	Web analytics - levels
+
+7.4	Modes of Social Media Marketing-
+
+7.4.1	Creating a Facebook page Visual identity of a Facebook page , Types of publications, Facebook Ads , Creating Facebook Ads , Ads Visibility
+
+7.4.2	Business opportunities and Instagram options Optimization of Instagram profiles , Integrating
+
+Instagram with a Web Site and other social networks,Keeping up with posts
+
+7.4.3	Business tools on LinkedIn Creating campaigns on LinkedIn , Analyzing visitation on LinkedIn
+
+7.4.4	Creating business accounts on YouTube YouTube,Advertising , YouTube Analytics
+
+7.4.5	E-mail marketing E-mail marketing plan , E-mail marketing campaign analysis , Keeping up with
+
+conversions
+
+7.5	Digital Marketing tools: Google Ads, FaceBook Ads, Google Analytic, Zapier, Google Keyword Planner
+
+EXERCISE: Social Media Marketing plan. EXERCISE: Making a Facebook page and Google Ads 8.Digital Marketing Budgeting<br>
+
+8.1	Resource planning
+
+8.2	Cost estimating
+
+8.3	Cost budgeting
+
+8.4	Cost control
+
+
+
+</p>
+
+</body>
+
+</html>
+
+
+
+Program8.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+<meta charset="utf-8" />
+
+<title>Angular JS Forms</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+<script>document.write('<base href="' + document.location + '" />');</script>
+
+</head>
+
+ 
+
+<body ng-controller="studentController">
+
+
+
+<h2>Student Registration Details</h2>
+
+<div ng-app="mainApp" ng-controller="studentController">
+
+
+
+<form name="studentForm" novalidate>
+
+<table border="1">
+
+<tr>
+
+<td>Enter first name:</td>
+
+<td><input name="firstname" type="text" ng-model="firstName" ng-pattern="/^[a-zA-Z]*$/" required>
+
+<span style="color:red"
+
+ng-show="studentForm.firstname.$dirty && studentForm.firstname.$invalid">
+
+<span ng-show="studentForm.firstname.$error.required">First Name is required.</span>
+
+</span>
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>Enter last name: </td>
+
+<td><input name="lastname" type="text" ng-model="lastName" ng-pattern="/^[a-zA-Z]*$/" required>
+
+<span style="color:red" ng-show="studentForm.lastname.$dirty && studentForm.lastname.
+
+$invalid">
+
+<span ng-show="studentForm.lastname.$error.required">Last Name is required.</span>
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td> Enter Age:
+
+</td>
+
+<td>
+
+<input type="text" ng-model="age" name="age" ng-pattern="/^(?:1[8-9]|[2-5][0-9]|50)$/" required/>
+
+<span style="color:red" ng-show="studentForm.age.$dirty && studentForm.age.$invalid">
+
+<span ng-show="studentForm.age.$error.required">age is required.</span>
+
+<span style="color:red" ng-show="studentForm.age.$error.pattern">*Invalid Age. Valid 18-50</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<button ng-click="reset()">Reset</button>
+
+</td>
+
+<td>
+
+<button ng-disabled="studentForm.firstname.$dirty && studentForm.firstname.$invalid || studentForm.lastname.$dirty &&
+
+studentForm.lastname.$invalid||studentForm.age.$invalid && studentForm.age.$dirty" ng- click="submit()">Submit</button>
+
+</td>
+
+ 
+
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+<div>
+
+<input type="number" ng-model="value"><br>
+
+<span>{{ value | greet}}</span>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []); mainApp.controller('studentController', function ($scope) {
+
+$scope.reset = function () {
+
+$scope.firstName = "Suresh";
+
+$scope.lastName = "Shinde";
+
+}
+
+$scope.reset();
+
+});
+
+mainApp.filter('greet', function() { return function(input) {
+
+if (input < 12) {
+
+return 'Good Morning';
+
+} else if (input >= 12 && input <= 17) { return 'Good Afternoon';
+
+} else if (input > 17 && input <= 24) { return 'Good Evening';
+
+} else {
+
+return "I'm not sure what time it is!";
+
+}
+
+};
+
+});
+
+</script>
+
+</body>
+
+</html>
+
+
+
+program9.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+<meta charset="utf-8" />
+
+<title>Employee Registration Form</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="mainApp" ng-controller="empController">
+
+
+
+<h2>Employee Registration Form</h2>
+
+<div ng-app="mainApp" ng-controller="empController">
+
+
+
+<form name="employeeForm" novalidate>
+
+ 
+
+<table border="1">
+
+<tr>
+
+<td>Enter Date of Birth:</td>
+
+<td><input name="dob" type="text" ng-model="dob" ng-pattern="/^[0-9]/" required>
+
+<span style="color:red" ng-show="employeeForm.dob.$dirty && employeeForm.dob.$invalid"></ span>
+
+<span ng-show="employeeForm.dob.$error.required">Date of Birth is required.</span>
+
+<span ng-show="employeeForm.dob.$error.pattern">Not a valid date of birth !</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter the Joining Date: </td>
+
+<td><input name="jdate" type="text" ng-model="jdate" ng-pattern="/^[0-9]/" required>
+
+<span style="color:red" ng-show="employeeForm.jdate.$dirty && employeeForm.jdate.$invalid">
+
+<span ng-show="employeeForm.jdate.$error.required">Joining Date is required.</span>
+
+<span ng-show="employeeForm.jdate.$error.pattern">Not a valid joining date!</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Enter the Salary:
+
+</td>
+
+<td>
+
+<input type="text" ng-model="salary" name="salary" ng-pattern="/^[0-9]/" required />
+
+<span style="color:red" ng-show="employeeForm.salary.$dirty && employeeForm.salary.
+
+$invalid">
+
+<span ng-show="employeeForm.salary.$error.required">salary is required.</span>
+
+<span ng-show="employeeForm.salary.$error.pattern">Not a valid number!</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<button ng-click="reset()">Reset</button>
+
+</td>
+
+<td>
+
+<button ng-disabled="employeeForm.dob.$dirty && employeeForm.dob.$invalid || employeeForm.jdate.$dirty &&
+
+employeeForm.jdate.$invalid||employeeForm.salary.$invalid && employeeForm.salary.$dirty" ng-click="submit()">Submit</button>
+
+</td>
+
+</tr>
+
+</table>
+
+<div>
+
+<form>
+
+<label> Enter First Value</label><input type="number" name="first" ng-model="number1"><br>
+
+<label>Enter Second Value</label><input type="number" name="second" ng-model="number2">
+
+<br>
+
+<br>select operation<br>Addition<input type="radio" value="+" name="arith" ng- model="status"><br>
+
+Substraction<input type="radio" value="-" name="arith" ng-model="status"><br> Multiplication<input type="radio" value="*" name="arith" ng-model="status"><br>
+
+ 
+
+Division<input type="radio" value="/" name="arith" ng-model="status"><br>
+
+
+
+</form>
+
+<hr>
+
+<div ng-switch="status">
+
+<div ng-switch-when="+">
+
+<h2>{{number1 + number2}} </h2>
+
+</div>
+
+<div ng-switch-when="-">
+
+<h2>{{number1 - number2}} </h2>
+
+</div>
+
+<div ng-switch-when="*">
+
+<h2> {{number1*number2}}</h2>
+
+</div>
+
+<div ng-switch-when="/">
+
+<h2> {{number1/number2}}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+
+
+<script>
+
+var mainApp = angular.module("mainApp", []); mainApp.controller('empController', function ($scope) {
+
+$scope.reset = function () {
+
+$scope.dob = "";
+
+$scope.jdate = "";
+
+$scope.salary = "";
+
+}
+
+$scope.reset();
+
+});
+
+</script>
+
+</body>
+
+</html>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+program10.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
+
+<body ng-app="myApp">
+
+<center><h2>HOTELS IN PUNE</h2></center>
+
+
+
+<p><a href="#/!">HOME Page</a></p>
+
+<ul>
+
+<li><a href="#!mariott">J W MARRIOTT</a><br></li>
+
+<li><a href="#!royalorchid">Royal Orchid</a><br></li>
+
+<li><a href="#!lemontree">Lemon Tree</a><br></li>
+
+<li><a href="#!tcr">The Corinthians Resort </a><br></li>
+
+<li><a href="#!pride">Pride Hotel</a><br></li>
+
+</ul>
+
+<div ng-view></div>
+
+
+
+<script>
+
+var app = angular.module("myApp", ["ngRoute"]); app.config(function($routeProvider) {
+
+$routeProvider
+
+.when("/", {
+
+templateUrl : "home.html"
+
+})
+
+.when("/mariott", { templateUrl : "marriott.html"
+
+})
+
+.when("/royalorchid", { templateUrl : "royalorchid.html"
+
+})
+
+.when("/lemontree", { templateUrl : "lemontree.html"
+
+})
+
+.when("/tcr", { templateUrl : "tcr.html"
+
+})
+
+.when("/pride", { templateUrl : "pride.html"
+
+})
+
+
+
+});
+
+
+
+</script>
+
+ 
+
+</body>
+
+</html>
+
+
+
+
+
+pride.html
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<body>
+
+<h1>Welcome to Pride Hotel</h1>
+
+<p>Address:5, University Rd, Narveer Tanaji Wadi, Shivajinagar, Pune, Maharashtra 411005</p>
+
+<p>Contact:020 66471741</p>
+
+</body>
+
+</html>
+
+
+
+
+
+lemontree.html
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<body>
+
+<h1>Welcome to Lemon Tree Hotel</h1>
+
+<p>Address: P4, Phase 1, Hinjewadi Rajiv Gandhi Infotech Park, Hinjawadi, Pune, Maharashtra 411057</p>
+
+<p>Contact:020 4423 2323</p>
+
+</body>
+
+</html>
+
+
+
+
+
+marriott.html
+
+
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<body>
+
+<h1>Welcome to JW Marriott Hotel</h1>
+
+<p>Address: Senapati Bapat Rd,
+
+Laxmi Society, Model Colony, Shivajinagar, Pune, Maharashtra 411053</p>
+
+<p>Contact:66833333</p>
+
+</body>
+
+</html>
+
+
+
+royalorchid.html
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<body>
+
+<h1>Welcome to Royal Orchid Hotel</h1>
+
+<p>Address: Marisoft Annexe, Kalyani Nagar, Pune, Maharashtra 411014</p>
+
+<p>Contact:020 4000 3000</p>
+
+ 
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+program11.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+<body ng-app="myApp">
+
+<div class="container-fluid">
+
+<center><h3>Historical places in india</h3></center>
+
+</div>
+
+<nav class="navbar bg-light">
+
+<ul class="navbar-nav">
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!aurangabad">Aurangabad</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!pune">Pune</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!agra">Agra</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!jodhpur">Jodhpur</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!hyderabad">Hyderabad</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+
+
+<div ng-view></div>
+
+
+
+<script>
+
+var app = angular.module("myApp", ["ngRoute"]); app.config(function ($routeProvider) {
+
+ 
+
+$routeProvider
+
+.when("/", {
+
+templateUrl: "home.html"
+
+})
+
+.when("/aurangabad", { templateUrl: "aurangabad.html"
+
+})
+
+.when("/pune", { templateUrl: "pune.html"
+
+})
+
+.when("/agra", { templateUrl: "agra.html"
+
+})
+
+.when("/jodhpur", { templateUrl: "jodhpur.html"
+
+})
+
+.when("/hyderabad", { templateUrl: "hyderabad.html"
+
+})
+
+});
+
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+aurangabad.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p>aurangabad page</p>
+
+<img src = "ajanta.jpg"
+
+alt = "Ajanta Elora Caves" />
+
+</body>
+
+</html> pune.html
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<img src = "pune.jpeg" alt = "Pune City" />
+
+<p>pune page</p>
+
+</body>
+
+</html> agra.html
+
+<!DOCTYPE html>
+
+ 
+
+<html>
+
+<body>
+
+<p>agra page</p>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+jodhpur.html
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p>jodhpur page</p>
+
+</body>
+
+</html>
+
+
+
+hyderabad.html
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p>hyderabad page</p>
+
+</body>
+
+</html>
+
+
+
+program12.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+<script>
+
+var invoice = angular.module('invoice', []); invoice.controller('InvoiceController', function($scope){
+
+$scope.invoice = { items: [{
+
+name: '',
+
+contactno: '',
+
+gender: '',
+
+favorite:'',
+
+}]
+
+};
+
+$scope.total = function(){ var total = 0;
+
+angular.forEach($scope.invoice.items, function(item){ total += item.qty * item.price;
+
+})
+
+return total;
+
+ 
+
+}
+
+});
+
+</script>
+
+</head>
+
+</html>
+
+<div ng-app="invoice">
+
+<h1>Customer Invoice Example</h1>
+
+</section>
+
+<section class="row" ng-controller="InvoiceController">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>contactno</th>
+
+<th>gender</th>
+
+<th>Item</th>
+
+<th>Quantity</th>
+
+<th>Price</th>
+
+<th>Total Amount</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr ng-repeat="item in invoice.items">
+
+<td><input type="text" ng-model="item.name" /></td>
+
+<td><input type="number" ng-model="item.contactno"/></td>
+
+<td><input type="text" ng-model="item.gender" /></td>
+
+<td><select ng-model="item.favorite" id="mySelect">
+
+<option>Tshirt</option>
+
+<option>Jeans</option>
+
+<option>Watch</option>
+
+<option>Shoes</option>
+
+</select></td>
+
+<td><input type="number" name="price" ng-model="item.price"></td>
+
+<td><input type="number" ng-model="item.qty" /></td>
+
+<td>{{item.qty * item.price}} Rs</td>
+
+<td></td>
+
+<td>Amout to be Paid : </td>
+
+<td>{{total()}} Rs</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+</div>
+
+
+
+program13.html
+
+
+
+<html>
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Students Marksheet Program</title>
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="mainApp" ng-controller="studentController" >
+
+<h2>Student Marksheet Program</h2>
+
+<div>
+
+<form name="form1">
+
+<table border="1">
+
+<tr>
+
+<td>Enter roll number</td>
+
+<td><input type="number" ng-model="rollno"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter student name: </td>
+
+<td>
+
+<input type="text" name="sname" ng-model="studName">
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter Class </td>
+
+<td><input type="text" name="sclass" ng-model="class1"> </td>
+
+</tr>
+
+<tr>
+
+<td>Enter Subject1 Marks</td>
+
+<td> <input type="number" name="subject1" ng-model="sub1"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter Subject2 Marks</td>
+
+<td> <input type="number" name="subject2" ng-model="sub2"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter Subject3 Marks</td>
+
+<td> <input type="number" name="subject3" ng-model="sub3"></td>
+
+</tr>
+
+<tr>
+
+<td> <input type="button" value="Display Result" ng-click="isShowHide('show')">
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+<div ng-show="showval" >
+
+<br><br>
+
+Mark Sheet of Student<br><br>
+
+<form name="form2" controller="studentController">
+
+<table border="2">
+
+<thead>
+
+<td>rollno</td>
+
+<td>name</td><td>class</td><td>subject1</td><td>subject2</td><td>subject3</td><td>Total</ td><td>percentage</td><td>grade</td>
+
+</thead>
+
+ 
+
+<tr>
+
+<td>{{rollno}}</td>
+
+<td>{{studName}}</td>
+
+<td>{{class1}}</td>
+
+<td>{{sub1}}</td>
+
+<td>{{sub2}}</td>
+
+<td>{{sub3}}</td>
+
+<td>{{sub1 + sub2 + sub3}}</td>
+
+<td>{{(( sub1+sub2+sub3)/300)*100;}}</td>
+
+<td><input type="text" name="grade" ng-model="grade"></td>
+
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []); mainApp.controller('studentController', function ($scope) {
+
+$scope.showval=false;
+
+$scope.isShowHide = function (param) { if (param=="show") {
+
+$scope.showval = true;
+
+}
+
+if($scope.per=74 && $scope.per<=100)
+
+$scope.grade="A";
+
+else if($scope.per=60 && $scope.per<74)
+
+$scope.grade="First";
+
+else if($scope.per>=45 && $scope.per<59)
+
+$scope.grade="Second";
+
+else if($scope.per>=35 && $scope.per<45)
+
+$scope.grade="Pass"; else
+
+$scope.grade="fail";
+
+}
+
+});
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+program14.html
+
+
+
+<html>
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Students Marksheet Program</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+ 
+
+<body ng-app="mainApp" ng-controller="custController">
+
+<h2>Customer Information for Plain Booking</h2>
+
+<div>
+
+<form name="form1">
+
+<table border="1">
+
+<tr>
+
+<td>Enter name of Customer</td>
+
+<td><input type="text" name="custname" ng-model="custname"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter address of Customer </td>
+
+<td>
+
+<input type="text" name="custaddr" ng-model="custaddr">
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter Contact No </td>
+
+<td><input type="number" name="custcontact" ng-model="custcontact"> </td>
+
+</tr>
+
+<tr>
+
+<td>Enter Gender </td>
+
+<td> <input type="text" name="custgender" ng-model="custgender"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter Date of Booking</td>
+
+<td> <input type="date" name="custdob" ng-model="custdob"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter Date of Journey</td>
+
+<td> <input type="date" name="custdoj" ng-model="custdoj"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter No.of Passenger</td>
+
+<td> <input type="number" name="custpass" ng-model="custpass"></td>
+
+</tr>
+
+<tr>
+
+<td> <input type="button" value="Display Result" ng-click="isShowHide('show')">
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+<div ng-show="showval">
+
+<br><br>
+
+<h3> eTicket of Passenger for Plain</h3><br><br>
+
+<form name="form2" controller="custController">
+
+<table border="2">
+
+<thead>
+
+<td>name</td>
+
+<td>address</td>
+
+<td>contactno</td>
+
+ 
+
+<td>gender</td>
+
+<td>Date of Booking</td>
+
+<td>Date of Journey</td>
+
+<td>No. of passengers</td>
+
+</thead>
+
+<tr>
+
+<td>{{custname}}</td>
+
+<td>{{custaddr}}</td>
+
+<td>{{custcontact}}</td>
+
+<td>{{custgender}}</td>
+
+<td>{{custdob}}</td>
+
+<td>{{custdoj}}</td>
+
+<td>{{custpass}}</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+
+
+<script>
+
+var mainApp = angular.module("mainApp", []);
+
+
+
+mainApp.controller('custController', function ($scope) {
+
+$scope.showval = false;
+
+$scope.isShowHide = function (param) { if (param == "show") {
+
+$scope.showval = true;
+
+
+
+}
+
+}
+
+});
+
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+program15.html
+
+
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Students Marksheet Program</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="mainApp" ng-controller="busController as bus">
+
+<h2>Bus Reservation System</h2>
+
+<div>
+
+
+
+<table border="1">
+
+<tr>
+
+<td>Enter the Name of Passenger</td>
+
+ 
+
+<td><input type="text" name="name1" ng-model="bus.name"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter your Address </td>
+
+<td>
+
+<input type="text" name="baddress" ng-model="bus.address">
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter Contact No </td>
+
+<td><input type="text" name="bcontactno" ng-model="bus.contactno"> </td>
+
+</tr>
+
+<tr>
+
+<td>Enter Source Station</td>
+
+<td><select name="source" ng-model="bus.source">
+
+<option>Pune</option>
+
+<option>Mumbai</option>
+
+<option>Nashik</option>
+
+<option>Kolhapur</option>
+
+</select></td>
+
+</tr>
+
+<tr>
+
+<td>Enter Destination Station</td>
+
+<td><select name="dest" ng-model="bus.dest1">
+
+<option>Pune</option>
+
+<option>Mumbai</option>
+
+<option>Nashik</option>
+
+<option>Kolhapur</option>
+
+</select></td>
+
+</tr>
+
+<tr>
+
+<td>Enter Date of booking</td>
+
+<td> <input type="date" name="dob" ng-model="bus.dob"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter Date of journey</td>
+
+<td> <input type="date" name="doj" ng-model="bus.doj"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter No of Passengers</td>
+
+<td> <input type="number" name="noofpass" ng-model="bus.noofpass"></td>
+
+</tr>
+
+
+
+<tr>
+
+<td> <input type="button" value="Display eTicket" ng-click="isShow('show')">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div ng-show="showval">
+
+<br><br>
+
+ 
+
+e-Ticket of Person<br><br>
+
+<table border="2">
+
+<thead>
+
+<td> name
+
+</td>
+
+<td>address</td>
+
+<td>contactno</td>
+
+<td>source</td>
+
+<td>destination</td>
+
+<td>date of booking</td>
+
+<td>date of journey</td>
+
+<td>number of Passengers</td>
+
+
+
+</thead>
+
+<tr>
+
+<td>{{bus.name}}</td>
+
+<td>{{bus.address}}</td>
+
+<td>{{bus.contactno}}</td>
+
+<td>{{bus.source}}</td>
+
+<td>{{bus.dest1}}</td>
+
+<td>{{bus.dob}}</td>
+
+<td>{{bus.doj}}</td>
+
+<td>{{bus.noofpass}}</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []);
+
+
+
+mainApp.controller('busController', function ($scope) {
+
+$scope.showval = false;
+
+$scope.isShow = function (param) {
+
+
+
+if (param == "show") {
+
+$scope.showval = true;
+
+
+
+}
+
+}
+
+
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+program16.html
+
+
+
+
+
+<!DOCTYPE html>
+
+ 
+
+<html>
+
+
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script>
+
+var app = angular.module("myApp", []); app.controller('studCtrl', ['$scope', function ($scope) {
+
+$scope.showStudent = function () {
+
+$scope.stud = [
+
+{ name: 'suresh', city: 'pune' },
+
+{ name: 'ramesh', city: 'pune' },
+
+{ name: 'rajesh', city: 'mumbai' },
+
+{ name: 'sachin', city: 'mumbai' },
+
+];
+
+}
+
+}]);
+
+
+
+</script>
+
+</head>
+
+
+
+<body ng-app="myApp" ng-controller="studCtrl">
+
+<form>
+
+<div ng-controller="studCtrl"> List of students living in pune<br>
+
+<table border="2">
+
+<tr ng-repeat="x in stud | filter:'pune'">
+
+<td>{{x.name}}</td>
+
+<td>
+
+{{x.city}}
+
+</td>
+
+</tr>
+
+</table>
+
+
+
+</div>
+
+
+
+</div>
+
+<input type="button" ng-click="showStudent()" value="Click Here"> </button>
+
+</form>
+
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+program17.html
+
+
+
+<html>
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Searching name in Angularjs</title>
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="mainApp" ng-controller="FilterController">
+
+<div ng-controller="FilterController">
+
+<div>
+
+Enter the character:
+
+<input type="text" name="searchname" ng-model="searchname">
+
+<div ng-hide="users"></div>
+
+<table>
+
+<tr ng-repeat="a in users | filter : searchname"ng-show="searchname">
+
+
+
+<td>{{a.name}}</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []); mainApp.controller("FilterController", function ($scope) {
+
+$scope.users = [{
+
+
+
+name: "Samarth kulkarni",
+
+}, {
+
+name: "abhay deshmukh",
+
+},{
+
+name: "ramesh jadhav",
+
+}, {
+
+name: "sachin dubey",
+
+}, {
+
+name: "Ajay kamthe",
+
+}];
+
+
+
+});
+
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+program18.html
+
+
+
+<!doctype html>
+
+<html ng-app="myApp">
+
+
+
+<head>
+
+
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
+
+</head>
+
+
+
+<body>
+
+<h1>welcome to our College Department</h1>
+
+<br><br>
+
+<div class="row">
+
+<div class="col">
+
+<ul>
+
+<li> <a href="#!Staff1">Staff1</a></li>
+
+<li> <a href="#!Staff2">Staff2</a></li>
+
+<li> <a href="#!Staff3">Staff3</a></li>
+
+<li><a href="#!Staff4">Staff4</a></li>
+
+</ul>
+
+</div>
+
+<div ng-view></div>
+
+
+
+<div class="col">
+
+<script>
+
+var app = angular.module("myApp", ["ngRoute"]); app.config(function ($routeProvider) {
+
+$routeProvider
+
+.when("/Staff1", { templateUrl: "Staff1.html"
+
+})
+
+.when("/Staff2", { templateUrl: "Staff2.html"
+
+})
+
+.when("/Staff3", { templateUrl: "Staff3.html"
+
+})
+
+.when("/Staff4", { templateUrl: "Staff4.html"
+
+})
+
+
+
+});
+
+</script>
+
+ 
+
+</div>
+
+</div>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+Staff1.html
+
+
+
+<!DOCTYPE html>
+
+<body>
+
+<img src = "faculty.jpeg" alt = "Faculty Image" />
+
+<p>welcome to staff1 web page</p>
+
+</body>
+
+</html> Staff2.html
+
+
+
+<!DOCTYPE html>
+
+<body>
+
+<img src = "faculty.jpeg" alt = "Faculty Image" />
+
+<p>welcome to staff2 web page</p>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+program19.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+<script>
+
+var app = angular.module("myApp", []); app.controller('empCtrl', ['$scope', function ($scope) {
+
+$scope.showEmployee = function () {
+
+$scope.emp = [
+
+{ name: 'suresh', city: 'pune',salary:'5000' },
+
+{ name: 'ramesh', city: 'pune',salary:'6000' },
+
+{ name: 'rajesh', city: 'mumbai',salary:'7000' },
+
+{ name: 'sachin', city: 'mumbai',salary:'8000'},
+
+];
+
+}
+
+ 
+
+}]);
+
+
+
+</script>
+
+</head>
+
+
+
+<body ng-app="myApp" ng-controller="empCtrl">
+
+<form>
+
+<div ng-controller="empCtrl">
+
+List of employees order by salary<br>
+
+<table border="2">
+
+<tr ng-repeat="x in emp| orderBy:'salary'">
+
+<td>{{x.name}}</td>
+
+<td>
+
+{{x.city}}
+
+</td>
+
+<td>{{x.salary}}</td>
+
+</tr>
+
+</table>
+
+
+
+</div>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+
+
+</div>
+
+<input type="button" ng-click="showEmployee()" value="Click Here"> </button>
+
+</form>
+
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+program20.html
+
+
+
+<html>
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Angular JS Validation Program</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="mainApp" ng-controller="personController">
+
+<h2>Angular JS Person Information</h2>
+
+<div>
+
+<form name="personform" novalidate="true">
+
+<table border="1">
+
+<tr>
+
+<td>Enter the Name of Person</td>
+
+ 
+
+<td><input type="text" name="name1" ng-model="name1" ng-pattern="/^[a-zA-Z]*$/" required></td>
+
+<td><span style="color:red" ng-show="personform.name1.$dirty && personform.name1.$invalid"></span>
+
+<span ng-show="personform.name1.$error.required">Name is required.</span>
+
+<span ng-show="personform.name1.$error.pattern">only characters are allowed.</span>
+
+
+
+</td>
+
+
+
+</tr>
+
+<tr>
+
+<td>Enter your MobileNo </td>
+
+<td><input type="number" name="mobile" ng-model="mobile" ng-pattern="/^[7-9][0-9]{9}$/" ng- minlength="10" ng-maxlength="10"
+
+required></td>
+
+<td> <span ng-show="personform.mobile.$error.required">Phone number is required</span>
+
+<span ng-show=" personform.mobile.$error.pattern"> Valid phone number is required</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter Pin Code</td>
+
+<td><input type="number" name="pincode" ng-model="pincode" ng-pattern="/^[0-5]{6}$/" ng- minlength="6" ng-maxlength="6" required> </td>
+
+<td> <span ng-show="personform.pincode.$error.required">pin code is required</span>
+
+<span ng-show="personform.pincode.$error.pattern">Valid pin code is required</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter Email ID</td>
+
+<td> <input type="email" name="email" ng-model="email" ng-maxlength="100" required></td>
+
+<td><span style="color:red" ng-show="personform.email.$dirty && personform.email.
+
+$invalid"></span>
+
+<span ng-show="personform.email.$error.required">Email is required.</span>
+
+<span ng-show="personform.email.$error.email">Invalid email address.</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td> <input type="button" value="Display Person Info" ng-click="isShow('show')">
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+<div ng-show="showval">
+
+<br><br>
+
+Information of Person<br><br>
+
+<table border="2">
+
+<thead>
+
+<td>name</td>
+
+<td>Mobile</td>
+
+<td>Pincode</td>
+
+ 
+
+<td>Email</td>
+
+
+
+</thead>
+
+<tr>
+
+<td>{{name1}}</td>
+
+<td>{{mobile}}</td>
+
+<td>{{pincode}}</td>
+
+<td>{{email}}</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []);
+
+
+
+mainApp.controller('personController', function ($scope) {
+
+$scope.showval = false;
+
+$scope.isShow = function (param) {
+
+
+
+if (param == "show") {
+
+$scope.showval = true;
+
+
+
+}
+
+}
+
+
+
+});
+
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+program21.html
+
+
+
+<html>
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Students Marksheet Program</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="mainApp" ng-controller="docController">
+
+<h2>Doctor Information Details Form</h2>
+
+<div>
+
+
+
+<table border="1">
+
+<tr>
+
+<td>Enter the Doctor Number</td>
+
+<td><input type="number" name="docno" ng-model="docno"></td>
+
+</tr>
+
+<tr>
+
+ 
+
+<td>Enter the Doctor Name </td>
+
+<td>
+
+<input type="text" name="docname" ng-model="docname">
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter the Doctor Address </td>
+
+<td><input type="text" name="docaddress" ng-model="docaddress"> </td>
+
+</tr>
+
+<tr>
+
+<td>Enter Phone Number</td>
+
+<td> <input type="number" name="phone" ng-model="phone"></td>
+
+</tr>
+
+<tr>
+
+<td>Enter the Doctor Specialization</td>
+
+<td> <input type="text" name="docspl" ng-model="docspl"></td>
+
+</tr>
+
+<tr>
+
+<td> <input type="button" value="Doctor Details" ng-click="isShow('show')">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div ng-show="showval">
+
+<br><br>
+
+Doctor Details<br><br>
+
+<table border="1">
+
+<thead>
+
+<td>Doctor No</td>
+
+<td>Doctor Name</td>
+
+<td>Doctor Address</td>
+
+<td>Doctor Phone</td>
+
+<td>Doctor Specialization</td>
+
+</thead>
+
+<tr>
+
+<td>{{docname}}</td>
+
+<td>{{docname}}</td>
+
+<td>{{docaddress}}</td>
+
+<td>{{phone}}</td>
+
+<td>{{docspl}}</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []);
+
+
+
+mainApp.controller('docController', function ($scope) {
+
+$scope.showval = false;
+
+$scope.isShow = function (param) { if (param == "show") {
+
+ 
+
+$scope.showval = true;
+
+
+
+}
+
+}
+
+
+
+});
+
+</script>
+
+
+
+
+
+</body>
+
+
+
+</html>
+
+
+
+program22.html
+
+
+
+<html>
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Angular JS Validation Program</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="mainApp" ng-controller="voterController">
+
+<h2>Voter Details Form</h2>
+
+<div>
+
+<form name="voterform" novalidate="true">
+
+<table border="1">
+
+<tr>
+
+<td>Enter the Name of voter</td>
+
+<td><input type="text" name="name1" ng-model="name1" ng-pattern="/^[A-Z]*$/" ng- required="true"></td>
+
+<td><span style="color:red" ng-show="voterform.name1.$dirty && voterform.name1.$invalid"></ span>
+
+<span ng-show="voterform.name1.$error.required">Voter Name is required.</span>
+
+<span ng-show="voterform.name1.$error.pattern">only Uppercase characters are allowed.</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter the voters age </td>
+
+<td><input type="number" name="age" ng-model="age" ng-pattern="/^(?:1[8-9]|[2-5][0-9]|100)$/" ng-required="true"></td>
+
+<td> <span ng-show="voterform.age.$error.required">voter age is required</span>
+
+<span ng-show=" voterform.age.$error.pattern"> Voter age should be more than 18</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Enter the Nationality</td>
+
+<td><input type="text" name="nat" ng-model="nat" ng-required="true"> </td>
+
+<td> <span ng-show="voterform.nat.$error.required">Nationality is required</span>
+
+<span ng-show="voterform.pincode.$error.pattern">Nationality should be Indian</span>
+
+ 
+
+</td>
+
+</tr>
+
+<tr>
+
+<td> <input type="button" value="Voter Info" ng-click="isShow('show')">
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+<div ng-show="showval">
+
+<br><br>
+
+voter Information<br><br>
+
+<table border="1">
+
+<thead>
+
+<td>name</td>
+
+<td>Age</td>
+
+<td>Nationality</td>
+
+</thead>
+
+<tr>
+
+<td>{{name1}}</td>
+
+<td>{{age}}</td>
+
+<td>{{nat}}</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []);
+
+
+
+mainApp.controller('voterController', function ($scope) {
+
+$scope.showval = false;
+
+$scope.isShow = function (param) {
+
+
+
+if (param == "show") {
+
+$scope.showval = true;
+
+
+
+}
+
+}
+
+
+
+});
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+program23.html
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+ 
+
+<meta charset="utf-8" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="myApp" ng-controller="myController">
+
+<form name="loginform" ng-submit="save(this)" novalidate>
+
+Enter Username<input placeholder="User Name" name="name" ng-model="theName" ng- minlength="3"
+
+ng-required="true" /><br>
+
+<br>
+
+<span ng-show="loginform.name.$dirty && loginorm.name.$invalid"></span>
+
+<span ng-show="loginform.name.$error.required">User Name is required</span><br><br> Enter Password <input placeholder="Password" name="pass1" ng-model="thePwd" type="password"
+
+ng-minlength="8" ng-required="true" /><br><br>
+
+<span ng-show="loginform.pass1.$dirty && loginorm.pass1.$invalid"></span>
+
+<span ng-show="loginform.pass1.$error.required">Password is required.</span><br><br>
+
+
+
+<input type="submit" name="submit" value="submit">
+
+
+
+</form>
+
+<script>
+
+var mainApp = angular.module("myApp", []); mainApp.controller('myController', function ($scope) {
+
+$scope.save = function ($this) {
+
+if ($this.loginform.name.$error.minlength) { alert("Username is too short");
+
+}
+
+else if($this.loginform.pass1.$error.minlength)
+
+{
+
+alert("password should be eight chars");
+
+}
+
+else if($this.loginform.name.$valid && $this.loginform.pass1.$valid) alert("valid credentials");
+
+}
+
+});
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
+
+
+
+program24.html
+
+
+
+<html>
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Searching name in Angularjs</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+ 
+
+<body ng-app="mainApp" ng-controller="FilterController">
+
+<div ng-controller="FilterController">
+
+<div>
+
+Enter the Search Keyword:
+
+<input type="text" name="searchname" ng-model="searchname">
+
+<div ng-hide="users"></div>
+
+<table>
+
+<tr ng-repeat="a in users | filter : searchname" ng-show="searchname">
+
+
+
+<td>{{a.name}}</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []); mainApp.controller("FilterController", function ($scope) {
+
+$scope.users = [{
+
+
+
+name: "Education",
+
+}, {
+
+name: "Sports",
+
+}, {
+
+name: "Bollywood",
+
+}, {
+
+name: "Politics",
+
+}];
+
+
+
+});
+
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+program25.html
+
+
+
+
+
+<html>
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Angular JS Validation Program</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+</head>
+
+
+
+<body ng-app="mainApp" ng-controller="personController">
+
+<h2>Login Applicationn</h2>
+
+ 
+
+<div>
+
+<form name="personform" novalidate="true">
+
+<table border="1">
+
+<tr>
+
+<td>Enter Email ID</td>
+
+<td> <input type="email" name="email" ng-model="email" ng-required="true"></td>
+
+<td><span style="color:red" ng-show="personform.email.$dirty && personform.email.
+
+$invalid"></span>
+
+<span ng-show="personform.email.$error.required">Email is required.</span>
+
+<span ng-show="personform.email.$error.email">Invalid email address.</span>
+
+</td>
+
+</tr>
+
+<td>Enter Password </td>
+
+<td><input placeholder="Password" name="pass1" ng-model="thePwd" type="password" ng-minlength="8" ng-required="true" /></td>
+
+<td>
+
+<span ng-show="personform.pass1.$dirty && personorm.pass1.$invalid"></span>
+
+<span ng-show="personform.pass1.$error.required">Password is required.</span>
+
+<span ng-show="personform.pass1.$error.minlength">Password should be 8 chars</span></td>
+
+<tr>
+
+<td><input type="submit" value="submit" name="submit"></td>
+
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+<script>
+
+var mainApp = angular.module("mainApp", []);
+
+
+
+mainApp.controller('personController', function ($scope) {
+
+});
+
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+program26.html
+
+
+
+<!doctype html>
+
+<html ng-app="myApp">
+
+<head>
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+ 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+
+<a class="navbar-brand" href="#">E Learning System</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="navbarText">
+
+<ul class="navbar-nav mr-auto">
+
+<li class="nav-item active">
+
+<a class="nav-link" href="#!/home">Home <span class="sr-only">(current)</span></a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!/management">Management</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!/staff">Staff</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!/about">About Us</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+
+<div ng-view></div>
+
+
+
+<script>
+
+var app = angular.module('myApp', ['ngRoute']);
+
+
+
+app.config(function($routeProvider) {
+
+$routeProvider
+
+
+
+.when('/home', { templateUrl : 'home.html',
+
+})
+
+
+
+.when('/management', { templateUrl : 'management.html',
+
+})
+
+.when('/staff', { templateUrl : 'staff.html',
+
+})
+
+ 
+
+.when('/about', { templateUrl : 'about.html',
+
+})
+
+
+
+.otherwise({redirectTo: '/'});
+
+});
+
+
+
+app.controller('HomeController', function($scope) {
+
+$scope.message = 'Hello Welcome to Home page';
+
+});
+
+
+
+</script>
+
+</body>
+
+</html> home.html
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<h1>welcome is Home page</p>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+management.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+
+
+<h1>welcome to management page</h1>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+staff.html
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p>welcome to staff page</p>
+
+
+
+</body>
+
+</html> about.html
+
+ 
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<h1>this is abous us page</h1>
+
+<p>For technical queries kindly contact following nos</p>
+
+<br>
+
+<p>9811223344,</p>
+
+<p>test@gmail.com</p>
+
+</body>
+
+</html>
