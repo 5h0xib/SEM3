@@ -2,7 +2,7 @@ Big Data Slips
 Big Data Slip Solutions
 
 1.Write an R program to find the maximum and the minimum value of a given vector.
-
+ 
 nums = c(10, 20, 30, 40, 50, 60)
 
 print('Original vector:')
